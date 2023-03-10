@@ -34,15 +34,15 @@ async function startWork() {
     }, 5000);
 
     new Worker('loadTokenPrices', async (job: Job) => {
-      console.log(`${Date.now()} - Worker ${workerId} starting job ${job.name}, id: ${job.id} data: ${job.data}`);
+      console.log(`${Date.now()} - Worker ${workerId} starting job ${job.name}, id: ${job.id} data: ${JSON.stringify(job.data)}`);
       await timeout(Math.random() * 5000 + 500);
-      console.log(`${Date.now()} - Worker ${workerId} finished job ${job.name}, id: ${job.id} data: ${job.data}`);
+      console.log(`${Date.now()} - Worker ${workerId} finished job ${job.name}, id: ${job.id} data: ${JSON.stringify(job.data)}`);
     });
 
     new Worker('updatePools', async (job: Job) => {
-      console.log(`${Date.now()} - Worker ${workerId} starting job ${job.name}, id: ${job.id} data: ${job.data}`);
+      console.log(`${Date.now()} - Worker ${workerId} starting job ${job.name}, id: ${job.id} data: ${JSON.stringify(job.data)}`);
       await timeout(Math.random() * 30000);
-      console.log(`${Date.now()} - Worker ${workerId} finished job ${job.name}, id: ${job.id} data: ${job.data}`);
+      console.log(`${Date.now()} - Worker ${workerId} finished job ${job.name}, id: ${job.id} data: ${JSON.stringify(job.data)}`);
     });
   }
 }
