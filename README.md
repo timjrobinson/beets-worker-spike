@@ -31,5 +31,5 @@ npx tsx index.ts >> jobs.txt &
 
 Make sure there are no overlapping job id's. In vscode if you highlight the job id it's easy to see all instances of it, make sure every start is followed by a finished before the next start.
 
-Jobs have a timeout of I think 30 seconds, so if you kill all the workers and start again it may take up to 30 seconds for them to start processing again as they have to wait for all the previous runs to time out. 
+Jobs have a no progress reported timeout of I think 30 seconds, so if you kill all the workers and start again it may take up to 30 seconds for them to start processing again as they have to wait for all the previous runs to time out. 
 
